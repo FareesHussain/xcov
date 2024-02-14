@@ -6,6 +6,8 @@ module Xcov
     attr_accessor :name
     attr_accessor :files
     attr_accessor :file_templates
+    attr_accessor :total_covered_lines
+    attr_accessor :total_executable_lines
 
     def initialize(name, files)
       @name = CGI::escapeHTML(name)
