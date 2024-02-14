@@ -19,8 +19,8 @@ module Xcov
       return 0 if targets.count == 0
       return targets.first.coverage if targets.count == 1
 
-      totalCoveredLines = targets.reduce(0) { |acc, target| acc + target.files.reduce(0) { |acc, file| acc + file.coveredLines } }
-      totalExecutableLines = targets.reduce(0) { |acc, target| acc + target.files.reduce(0) { |acc, file| acc + file.executableLines } }
+      totalCoveredLines = targets.reduce(0) { |acc, target| acc + target.total_covered_lines }
+      totalExecutableLines = targets.reduce(0) { |acc, target| acc + target.total_executable_lines }
       totalCoveredLines.to_f / totalExecutableLines.to_f
     end
 
