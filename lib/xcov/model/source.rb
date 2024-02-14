@@ -58,6 +58,8 @@ module Xcov
         "name" => @name,
         "path" => @location,
         "coverage" => @coverage,
+        "covered_lines" => @coveredLines,
+        "executable_lines" => @executableLines,
         "type" => @type,
         "functions" => @functions ? @functions.map{ |function| function.json_value } : []
       }
